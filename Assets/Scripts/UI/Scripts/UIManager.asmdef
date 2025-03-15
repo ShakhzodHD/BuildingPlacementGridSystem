@@ -1,0 +1,17 @@
+{
+    "name": "UIManager",
+    "rootNamespace": "",
+    "references": [
+        "GUID:eed8dc92654818f418b9a5d5dd7f1a47",
+        "GUID:6b7112c59e031284080b42a418878848"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
