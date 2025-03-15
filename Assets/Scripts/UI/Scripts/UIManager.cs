@@ -11,14 +11,13 @@ namespace UIManager
         [SerializeField] private Button removeButton;
         [SerializeField] private Button clearButton;
 
-        private IBuildingManager buildingManager;
+        [Inject] private readonly IBuildingManager buildingManager;
         private ISaveLoadService saveLoadService;
         private UIMouseTracker uiMouseTracker;
 
         [Inject]
-        public void Construct(IBuildingManager building, ISaveLoadService saveLoad)
+        public void Construct(ISaveLoadService saveLoad)
         {
-            buildingManager = building;
             saveLoadService = saveLoad;
 
             uiMouseTracker = gameObject.AddComponent<UIMouseTracker>();

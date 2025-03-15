@@ -9,10 +9,10 @@ namespace Buildings
 
         public override void InstallBindings()
         {
-            Debug.Log("Билдинг инсталлер");
-            Container.Bind<BuildingManager>().FromComponentInNewPrefab(buildingManagerPrefab).AsSingle().NonLazy();
+            Debug.Log("Building Install");
 
-            Container.Bind<IBuildingManager>().To<BuildingManager>().FromResolve().AsSingle();
+            Container.Bind<BuildingManager>().FromComponentInNewPrefab(buildingManagerPrefab).AsSingle().NonLazy();
+            Container.Bind<IBuildingManager>().To<BuildingManager>().FromResolve().AsCached();
         }
     }
 }

@@ -9,11 +9,8 @@ namespace UIManager
 
         public override void InstallBindings()
         {
-            Debug.Log("UI инсталлер");
-            Container.Bind<UIManager>()
-                .FromComponentInNewPrefab(uiManagerPrefab)
-                .AsSingle()
-                .NonLazy();
+            Debug.Log("UI Install");
+            Container.Bind<UIManager>().FromComponentInNewPrefab(uiManagerPrefab).AsSingle().NonLazy();
         }
     }
 }

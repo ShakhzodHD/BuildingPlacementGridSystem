@@ -1,30 +1,33 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class NewInputService : IInputService
+namespace Input
 {
-    private readonly GameInputActions inputActions;
-
-    public NewInputService()
+    public class NewInputService : IInputService
     {
-        inputActions = new GameInputActions();
-        inputActions.Gameplay.Enable();
-    }
+        private readonly GameInputActions inputActions;
 
-    public Vector2 MousePosition
-    {
-        get => inputActions.Gameplay.MousePos.ReadValue<Vector2>();
-    }
-
-    public bool IsLeftClickPressed
-    {
-        get
+        public NewInputService()
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            inputActions = new GameInputActions();
+            inputActions.Gameplay.Enable();
+        }
+
+        public Vector2 MousePosition
+        {
+            get => inputActions.Gameplay.MousePos.ReadValue<Vector2>();
+        }
+
+        public bool IsLeftClickPressed
+        {
+            get
             {
-                return false;
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    return false;
+                }
+                return inputActions.Gameplay.LeftClick.IsPressed();
             }
-            return inputActions.Gameplay.LeftClick.IsPressed();
         }
     }
 }

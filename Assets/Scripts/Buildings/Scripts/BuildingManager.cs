@@ -22,6 +22,7 @@ namespace Buildings
         [Inject]
         public void Construct(IInputService input, IGridService grid, ISaveLoadService saveLoad)
         {
+
             inputService = input;
             gridService = grid;
             saveLoadService = saveLoad;
