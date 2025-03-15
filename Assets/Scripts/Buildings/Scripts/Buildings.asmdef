@@ -2,9 +2,7 @@
     "name": "Buildings",
     "rootNamespace": "",
     "references": [
-        "GUID:92fd760b67daec846b68e0c60a7afcbe",
-        "GUID:6412e65eda87dd14a9a8b0bf7befced6",
-        "GUID:6b7112c59e031284080b42a418878848"
+        "GUID:43502808343d14d42a4d8f422431a8b5"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

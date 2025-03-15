@@ -1,3 +1,16 @@
 {
-	"name": "SaveData"
+    "name": "SaveData",
+    "rootNamespace": "",
+    "references": [
+        "GUID:43502808343d14d42a4d8f422431a8b5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
