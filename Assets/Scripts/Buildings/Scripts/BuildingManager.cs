@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Buildings
 {
-    public class BuildingManager : MonoBehaviour
+    public class BuildingManager : MonoBehaviour, IBuildingManager
     {
         [SerializeField] private BuildingConfig[] buildingConfigs;
         private BuildingConfig selectedBuilding;

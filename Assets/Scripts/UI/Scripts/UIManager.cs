@@ -2,40 +2,43 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class UIManager : MonoBehaviour
+namespace UIManager
 {
-    [SerializeField] private Button[] buildingButtons;
-    [SerializeField] private Button placeButton;
-    [SerializeField] private Button removeButton;
-    [SerializeField] private Button clearButton;
-
-    private BuildingManager buildingManager;
-    private ISaveLoadService saveLoadService;
-    private UIMouseTracker uiMouseTracker;
-
-    [Inject]
-    public void Construct(BuildingManager building, ISaveLoadService saveLoad)
+    public class UIManager : MonoBehaviour
     {
-        buildingManager = building;
-        saveLoadService = saveLoad;
+        [SerializeField] private Button[] buildingButtons;
+        [SerializeField] private Button placeButton;
+        [SerializeField] private Button removeButton;
+        [SerializeField] private Button clearButton;
 
-        uiMouseTracker = gameObject.AddComponent<UIMouseTracker>();
-        uiMouseTracker.Initialize(buildingManager.OnMouseOverUIChanged);
+        private IBuildingManager buildingManager;
+        private ISaveLoadService saveLoadService;
+        private UIMouseTracker uiMouseTracker;
 
-        for (int i = 0; i < buildingButtons.Length; i++)
+        [Inject]
+        public void Construct(IBuildingManager building, ISaveLoadService saveLoad)
         {
-            int index = i;
-            buildingButtons[i].onClick.AddListener(() => buildingManager.SelectBuilding(index));
+            buildingManager = building;
+            saveLoadService = saveLoad;
+
+            uiMouseTracker = gameObject.AddComponent<UIMouseTracker>();
+            uiMouseTracker.Initialize(buildingManager.OnMouseOverUIChanged);
+
+            for (int i = 0; i < buildingButtons.Length; i++)
+            {
+                int index = i;
+                buildingButtons[i].onClick.AddListener(() => buildingManager.SelectBuilding(index));
+            }
+
+            placeButton.onClick.AddListener(() => buildingManager.SetPlaceMode());
+            removeButton.onClick.AddListener(() => buildingManager.SetRemoveMode());
+
+            clearButton.onClick.AddListener(ClearSaves);
         }
 
-        placeButton.onClick.AddListener(() => buildingManager.SetPlaceMode());
-        removeButton.onClick.AddListener(() => buildingManager.SetRemoveMode());
-
-        clearButton.onClick.AddListener(ClearSaves);
-    }
-
-    private void ClearSaves()
-    {
-        saveLoadService.ClearSaves();
+        private void ClearSaves()
+        {
+            saveLoadService.ClearSaves();
+        }
     }
 }
