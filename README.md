@@ -11,6 +11,8 @@ Input -> Core, Zenject, Unity.InputSystem </br>
 SaveData -> Core, Zenject </br>
 UIManager -> Core, Zenject </br>
 
+Все интерфейсы лежат в Core, можно их в отдельную сборку. 
+
 Сейчас пишу свой абстрактный DI
 Может допишу, а может и нет) Посмотрим.
 Задачка интересная, заставила попотеть 
