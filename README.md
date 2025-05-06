@@ -43,20 +43,12 @@ This project is a **grid-based building placement system** developed in Unity 20
 
 ### 📂 Repository Highlights  
 - **Modular Codebase**: Designed for easy scalability and reusability.  
-- **Clear Documentation**: Comments and guidelines for understanding the project.  
 - **Example Scene**: Includes a pre-built example scene demonstrating the system.
-
----
-
-### 🌟 What I Learned  
-- Implementing grid-based mechanics and snap systems.  
-- Using Unity’s **New Input System** for intuitive controls.  
-- Building scalable and modular architectures with **Assembly Definition**.  
-- Managing persistent game data between sessions.  
+- **Reminder:** Don't forget to enable Gizmos.
 
 ---
 
 ### 🚀 How to Use  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/building-placement-system.git
+   git clone https://github.com/ShakhzodHD/BuildingPlacementGridSystem
