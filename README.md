@@ -1,18 +1,3 @@
-Проблема в том что сборки зависими от Zenject.
-
-А так вроде все работает.
-
-
-
-Core -> Zenject </br>
-Building -> Core, Zenject </br>
-Grid -> Core, Zenject </br>
-Input -> Core, Zenject, Unity.InputSystem </br>
-SaveData -> Core, Zenject </br>
-UIManager -> Core, Zenject </br>
-
-Все интерфейсы лежат в Core, можно их в отдельную сборку. 
-
-Сейчас пишу свой абстрактный DI
-Может допишу, а может и нет) Посмотрим.
-Задачка интересная, заставила попотеть 
+# 🏗 Overview
+This project is a grid-based building placement system developed in Unity 2022.3. The system allows users to place and delete buildings on a grid with persistent data storage and an intuitive interface.
+## 🎮 Features
